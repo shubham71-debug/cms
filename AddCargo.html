@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Management System</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Cargo Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="user.html">Dashboard</a></li>
+                <li><a href="AddCargo.html">Add Cargo</a></li>
+                <li><a href="MyCargo.html">My Cargo</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Add New Cargo</h2>
+            <form action="Submit.html" method="post">
+                <h3>Sender Details</h3>
+                <label for="sname"><b>Sender Name:</b></label>
+                <input type="text" placeholder="Enter Name" name="sname" required>
+                <br>
+                <label for="smobile"><b>Sender Mobile:</b></label>
+                <input type="tel" placeholder="Enter Mobile No" name="smobile" required>
+                <br>
+                <label for="semail"><b>Sender Email:</b></label>
+                <input type="email" placeholder="eg: joxy12@gmail.com" name="semail" required>
+                <br>
+                <label for="fullAddress"><b>Full Address:</b></label>
+                <textarea type="text" id="fullAddress" placeholder="Enter Full Address" name="fullAddress" required></textarea>
+                <br>
+                <h3>Receiver Details</h3>
+                <label for="rname"><b>Receiver Name:</b></label>
+                <input type="text" placeholder="Enter Name" name="rname" required>
+                <br>
+                <label for="rmobile"><b>Receiver Mobile:</b></label>
+                <input type="tel" placeholder="Enter Mobile No" name="rmobile" required>
+                <br>
+                <label for="remail"><b>Receiver Email:</b></label>
+                <input type="email" placeholder="eg: roger67@gmail.com" name="remail" required>
+                <br>
+                <label for="raddress"><b>Receiver Address:</b></label>
+                <textarea type="text" placeholder="Enter Full Address" name="raddress" required></textarea>
+                <br>
+                <a href="Submit.html">submit</a> 
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cargo Management System. All rights reserved.</p>
+    </footer>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #b0a8a8;
+        }
+
+        header {
+            background-color: #955c5c;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ddd;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .welcome {
+            background-color: #e9c85d;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #7a08aba0;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        form h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="tel"],
+        form input[type="email"] {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #879ece;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #f48aad;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        form button[type="reset"] {
+            background-color: #b7dad4;
+            margin-left: 15px;
+        }
+
+        form button:hover {
+            background-color: #ba54d3;
+        }
+
+        footer {
+            background-color: #d6f5b3;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 40%;
+            font-size: 14px;
+        }
+    </style>
+</body>
+</html>

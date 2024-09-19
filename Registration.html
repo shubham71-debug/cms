@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Page</title>
+
+</head>
+<body>
+
+<div class="container">
+ <h1 >Registration Page</h1>
+ <form id="signupForm" action="Login.html" method="post">
+    <label for="fname"><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" name="signupFname" id="signupFname" required>
+
+<label for="mname"><b>Middle Name</b></label>
+    <input type="text" placeholder="Enter Middle Name" name="signupMname" id="signupMname" required>
+
+    <label for="lname"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" name="signupLname" id="signupLname" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="signupEmail"  id="signupEmail" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="signupPswd" id="signupPswd" required>
+
+    <label for="psw-confirm"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="signupCpswd" id="signupCpswd" required>
+
+    <button type="submit">Register</button>
+
+ </form>
+<a href="Login.html">Login</a>
+ <script src="index.js" type="module"></script>
+</div>
+<style>
+  body {
+   font-family: Arial, sans-serif;
+   background-image: url('cargo.jpg');
+   background-size: cover;
+  }
+  h1, h2 {
+   color: #333;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px #ccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"] {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+  }
+  
+  button {
+   background-color: #4CAF50;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+  }
+  
+  button:hover {
+   opacity: 0.8;
+  }
+  
+  .regform {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+  }
+
+  /* Style the login link */
+a {
+    color: #c580e3; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Change color on hover */
+a:hover {
+    color: #45a049;
+}
+
+  
+  </style>
+   
+
+<script src="index.js">
+ 
+   
+</script>
+</body>
+</html>

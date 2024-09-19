@@ -1,0 +1,129 @@
+/* Reset and Basics */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #00f5a3, #0fbcf9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Header Styles */
+header {
+    color: #fff;
+    padding: 15px 0;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styles */
+.wrapper {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    text-align: center;
+    flex-direction: column;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.input-area {
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    background-color: transparent;
+    outline: none;
+    transition: border-bottom-color 0.3s ease;
+    font-size: 16px;
+}
+
+input:focus {
+    border-bottom-color: #0fbcf9;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.error {
+    display: none;
+}
+
+.error-icon {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    color: #e74c3c;
+}
+
+.error-txt {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #0fbcf9;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0098d2;
+}
+
+/* Additional Text Styles */
+.sign-txt {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #555;
+}

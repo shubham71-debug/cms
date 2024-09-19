@@ -1,0 +1,97 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Change to a softer background color */
+}
+
+/* Header Styles */
+header {
+    background-color: #3c521c;
+    color: white;
+    padding: 20px 0; /* Increase padding for better spacing */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(240, 170, 65, 0.681); /* Add shadow for depth */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #90acc1;
+    padding: 10px 0; /* Increase top/bottom padding */
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 15px; /* Increase spacing between nav items */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add smooth color transition */
+}
+
+nav a:hover {
+    color: #e9d642; /* Change color on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Limit form width for better readability */
+    margin: 0 auto; /* Center align the form */
+}
+
+form label {
+    margin-bottom: 10px; /* Increase space between label and input */
+    font-weight: bold; /* Make labels more prominent */
+}
+
+form input[type="text"],
+form textarea {
+    margin-bottom: 15px; /* Increase space between inputs */
+    padding: 10px;
+    border: 1px solid #bd8787; /* Add border for input fields */
+    border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+form button {
+    margin-top: 15px; /* Increase space between button and inputs */
+    padding: 10px 20px; /* Add padding for better button size */
+    border: none;
+    background-color: #005a9c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add smooth color transition */
+}
+
+form button:hover {
+    background-color: #d19cea; /* Darken color on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #647c8e;
+    color: white;
+    padding: 20px 0; /* Increase padding for better spacing */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 30%;
+}

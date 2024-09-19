@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cargo Management System</title>
+</head>
+<body>
+    <header>
+        <h1>Cargo Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Admin.html">Dashboard</a></li>
+                <li>
+                    <select id="administrationSelect" onchange="handleAdministration(this.value)">
+                        <option value="" selected disabled>Administration</option>
+                        <option value="Payment.html">Add Payment</option>
+                        <option value="AdminAddCargo.html">Add Cargo</option>
+                        <option value="Tracking.html">Add Tracking</option>
+                    </select>
+                </li>              
+                
+                <li>
+                    <select id="ReportSelect" onchange="handleReport(this.value)">
+                        <option value="" selected disabled>Report</option>
+                        <option value="CargoReports.html">Cargo Report</option>
+                        <option value="TrackingReports.html">Payment Report</option>
+                    </select>
+                </li>
+                
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Tracking Reports</h2>
+            <form id="searchForm">
+                <label for="reference-code">Search:</label>
+                <input type="text" id="reference-code" name="reference-code" required>
+                <button type="submit">Search</button>
+            </form>
+            <table id="trackingTable" border="2">
+                <thead>
+                    <tr>
+                        <th>Sr.No.</th>
+                        <th>Tracking Number</th>
+                        <th>Sender Name</th>
+                        <th>Receiver Name</th>
+                        <th>Sender Mobile</th>
+                        <th>Receiver Mobile</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="trackingData">
+                    <!-- Data will be dynamically populated here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cargo Management System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sample data (Replace this with actual data)
+        const sampleData = [
+            { id: 1, trackingNumber: "1029384756", senderName: "Shubham", receiverName: "Ravi", senderMobile: "8591110422", receiverMobile: "96849305943", trackingLink: "TrackReport.html" },
+            { id: 2, trackingNumber: "0987651234", senderName: "Alice", receiverName: "Omkar", senderMobile: "9876543210", receiverMobile: "7483040483", trackingLink: "TrackReport2.html" },
+            { id: 3, trackingNumber: "1209348756", senderName: "Harish", receiverName: "Sourav", senderMobile: "9846397290", receiverMobile: "89304635840", trackingLink: "TrackReport3.html" },
+            { id: 4, trackingNumber: "2346373063", senderName: "Navin", receiverName: "Pooja", senderMobile: "7589447834", receiverMobile: "8765435678", trackingLink: "TrackReport4.html" },
+            { id: 5, trackingNumber: "3432425687", senderName: "Vaibhavi", receiverName: "Prathamesh", senderMobile: "9876543179", receiverMobile: "9087654387", trackingLink: "TrackReport5.html" }
+
+
+        ];
+
+        // Function to populate table with data
+        function populateTable(data) {
+            const tableBody = document.getElementById("trackingData");
+            tableBody.innerHTML = "";
+            data.forEach((item, index) => {
+                const row = `<tr>
+                                <td>${index + 1}</td>
+                                <td><a href="${item.trackingLink}">${item.trackingNumber}</a></td>
+                                <td>${item.senderName}</td>
+                                <td>${item.receiverName}</td>
+                                <td>${item.senderMobile}</td>
+                                <td>${item.receiverMobile}</td>
+                                <td>
+                                    <button onclick="editEntry(${item.id})">Edit</button>
+                                    <button onclick="deleteEntry(${item.id})">Delete</button>
+                                </td>
+                            </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function handleAdministration(value) {
+    // Redirect to the selected administration page
+    if (value === "Payment.html") {
+        window.location.href = "Payment.html";
+    } else if (value === "AdminAddCargo.html") {
+        window.location.href = "AdminAddCargo.html";
+    } else if (value === "Tracking.html") {
+        window.location.href = "Tracking.html";
+    }
+}
+
+function handleReport(value) {
+    // Redirect to the selected report page
+    if (value === "CargoReports.html") {
+        window.location.href = "CargoReports.html";
+    } else if (value === "PaymentReports.html") {
+        window.location.href = "PaymentReports.html";
+    }
+}
+
+
+        // Function to handle form submission (for search)
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const referenceCode = document.getElementById("reference-code").value;
+            const searchData = sampleData.filter(item => item.trackingNumber === referenceCode);
+            if (searchData.length > 0) {
+                populateTable(searchData);
+            } else {
+                alert(`Tracking number ${referenceCode} not found.`);
+            }
+        });
+
+        // Function to edit an entry
+        function editEntry(id) {
+            // Redirect to another page for editing
+            window.location.href = `AdminAddCargo.html?id=${id}`;
+        }
+
+        // Function to delete an entry
+        function deleteEntry(id) {
+            // Find the index of the item with the given id
+            const index = sampleData.findIndex(item => item.id === id);
+            if (index !== -1) {
+                // Remove the item from the sampleData array
+                sampleData.splice(index, 1);
+                // Repopulate the table
+                populateTable(sampleData);
+                console.log(`Entry with ID: ${id} deleted successfully.`);
+            } else {
+                console.log(`Entry with ID: ${id} not found.`);
+            }
+        }
+
+        // Initial population of table with sample data
+        populateTable(sampleData);
+    </script>
+</body>
+</html>

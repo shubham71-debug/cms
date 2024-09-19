@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Management System</title>
+    <link rel="stylesheet" href="AdminTracking.css">
+    <style>
+        /* Custom styles specific to this page */
+        main {
+            background-color: #a85757;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px #e0f431bb;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        
+        main h2 {
+            color: #5587aa;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cargo Management System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="Admin.html">Dashboard</a></li>
+            <li>
+            <select id="administrationSelect" onchange="handleAdministration(this.value)">
+                <option value="" selected disabled>Administration</option>
+                <option value="Payment.html">Add Payment</option>
+                <option value="AdminAddCargo.html">Add Cargo</option>
+                <option value="tracking.html">Add Tracking</option>
+            </select>
+            </li>
+            <li>
+                <select id="ReportSelect" onchange="handleReport(this.value)">
+                    <option value="" selected disabled>Reports</option>
+                    <option value="TrackReports.html">Cargo Report</option>
+                    <option value="TrackReports5.html">Payment Report</option>
+                    </select>
+            </li>
+
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Add New Tracking</h2>
+        <form id="newTrackingForm">
+            <label for="trackingNumber">Tracking Number:</label><br>
+            <select id="trackingNumber" required>
+                <option value="" selected disabled></option>
+                <option value="1029384756">1029384756</option>
+                <option value="0987651234">0987651234</option>
+                <option value="1209348756">1209348756</option>
+            </select><br>
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" required></textarea><br>
+            <button type="submit" id="saveTracking">Save Tracking</button>
+            <button type="reset" id="reset">Reset</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cargo Management System. All rights reserved.</p>
+    </footer>
+    <script src="AdminTracking.js"></script>
+</body>
+</html>

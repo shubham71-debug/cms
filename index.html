@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Management System</title>
+    <link rel="stylesheet" href="#">
+    </head>
+<body>
+    <header>
+        <h1>Cargo Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#welcome">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="Registration.html">Registration</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Welcome Section-->
+    <main>
+        <section id="welcome" class="welcome">
+            <h2>Welcome to Cargo Management System</h2>
+            <p class="system-description">Our Cargo Management System utilizes cutting-edge technology to streamline your logistics operations. From efficient tracking to seamless communication, we've got you covered.</p>
+        </section>
+
+        <!--About Us Section-->
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>Welcome to Cargo Management System. We are revolutionizing the way cargo is managed and transported. Our advanced system utilizes cutting-edge technology to streamline operations, enhance efficiency, and ensure the seamless movement of goods across the globe.</p>
+            <div class="features">
+                <div class="feature">
+                    <img src="Innovation.jpg" alt="Innovation Icon">
+                    <h3>Innovative Solutions</h3>
+                    <p>Our platform leverages the latest innovations in AI, IoT, and blockchain to optimize every aspect of cargo management, from inventory tracking to route planning.</p>
+                </div>
+                <div class="feature">
+                    <img src="robust.png" alt="Security Icon">
+                    <h3>Robust Security</h3>
+                    <p>Security is our top priority. With state-of-the-art encryption and authentication measures, we ensure that your sensitive cargo data remains safe and secure at all times.</p>
+                </div>
+                <div class="feature">
+                    <img src="efficiency.jpg" alt="Efficiency Icon">
+                    <h3>Unmatched Efficiency</h3>
+                    <p>By automating repetitive tasks and optimizing processes, we help you minimize costs, reduce delays, and maximize the efficiency of your cargo operations.</p>
+                </div>
+                <div class="feature">
+                    <img src="support.jpg" alt="Support Icon">
+                    <h3>Dedicated Support</h3>
+                    <p>Our team of experienced professionals is here to provide round-the-clock support, ensuring that you have the assistance you need whenever you need it.</p>
+                </div>
+            </div>
+            <!-- Additional Info -->
+            <div class="additional-info">
+                <h3>Why Choose Us?</h3>
+                <ul>
+                    <li>Reliable and efficient cargo tracking</li>
+                    <li>24/7 customer support</li>
+                    <li>Flexible and customizable solutions</li>
+                    <li>Advanced security measures to protect your data</li>
+                    <li>Integrated document management system</li>
+                </ul>
+                <p>At Cargo Management System, we are committed to providing top-notch services to meet all your cargo management needs. With our innovative solutions and dedicated support, you can trust us to streamline your logistics operations effectively.</p>
+            </div>
+            
+        
+            </div>
+        </section>
+
+        <!--Contact Us Section-->
+        <section id="contact" class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="index.html" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <a href="index.html">
+                <button type="submit">Submit</button></a>
+            </form>
+        </section>
+    </main>
+
+    <!--Footer Section-->
+    <footer>
+        <p>&copy; 2024 Cargo Management System. All rights reserved.</p>
+    </footer>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsla(184, 60%, 55%, 0.273);
+            color: #1f2010; /* Changed text color for better readability */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0; /* Increased padding for better header visibility */
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+            margin-bottom: 60px;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            padding: 40px 20px; /* Increased padding for better emphasis */
+            text-align: center;
+            background-color: #c79ed9;
+            border-radius: 10px; /* Rounded corners for sections */
+            box-shadow: 0 0 10px hsla(183, 68%, 46%, 0.1); /* Added shadow for depth */
+            margin-bottom: 30px; /* Increased margin for better separation */
+        }
+
+        /* About Section */
+        .about {
+            padding: 40px 20px; /* Increased padding for better emphasis */
+            background-color: #dfc86c;
+            border-radius: 10px; /* Rounded corners for sections */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+            margin-bottom: 30px; /* Increased margin for better separation */
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .feature {
+            flex: 0 1 calc(50% - 20px);
+            background-color: #f9f9f9;
+            padding: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 10px; /* Rounded corners for feature boxes */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+        }
+
+        .feature img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px; /* Increased margin for better spacing */
+
+        }
+
+        /* Additional Info */
+        .additional-info {
+            padding: 40px 20px; /* Increased padding for better emphasis */
+            background-color: #8395c0;
+            border-radius: 10px; /* Rounded corners for sections */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+            margin-bottom: 30px; /* Increased margin for better separation */
+        }
+
+        .additional-info h3 {
+            margin-top: 0;
+            margin-bottom: 20px; /* Increased margin for better spacing */
+        }
+
+        .additional-info ul {
+            padding-left: 20px;
+        }
+
+        /* Contact Form Section */
+        .contact-form {
+            padding: 40px 20px; 
+            background-color: #dc5353;
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+            margin-bottom: 30px; 
+        }
+
+        .contact-form form {
+            margin-top: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold; 
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 150px; 
+        }
+
+        .contact-form button {
+            background-color: #6222c9;
+            color: #fff;
+            padding: 15px 30px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; 
+        }
+
+        .contact-form button:hover {
+            background-color: #ea75bb;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #24c652;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .feature {
+                flex: 0 1 100%;
+            }
+        }
+    </style>
+
+    <script src="index.js"></script>
+
+</body>
+</html>

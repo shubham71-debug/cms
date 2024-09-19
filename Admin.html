@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css">
+    <title>Cargo Management System</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Cargo Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Admin.html">Dashboard</a></li>
+                <li>
+                    <select id="administrationSelect" onchange="handleAdministration(this.value)">
+                        <option value="" selected disabled>Administration</option>
+                        <option value="Payment.html">Add Payment</option>
+                        <option value="AdminAddCargo.html">Add Cargo</option>
+                        <option value="Tracking.html">Add Tracking</option>
+                    </select>
+                </li>
+                <li><select id="ReportSelect" onchange="handleReport(this.value)">
+                    <option value="" selected disabled>Report</option>
+                    <option value="CargoReports.html">Cargo Report</option>
+                    <option value="CargoReports.html">Payment Report</option>
+                </select></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Welcome to Cargo Management System</h2>
+            <div class="buttons">
+                <button type="button" class="Payment" onclick="redirectTo('Payment.html')">Payment</button>
+                <button type="button" class="Add Cargo" onclick="redirectTo('AdminAddCargo.html')">Add Cargo</button>
+                <button type="button" class="Add Tracking" onclick="redirectTo('Tracking.html')">Add Tracking</button>
+                <button type="button" class="Cargo Report"  onclick="redirectTo('CargoReports.html')">Cargo Report</button>
+                <button type="button" class="Payment Report" onclick="redirectTo('CargoReports.html')">Payment Report</button>
+                <button type="button" class="Logout" onclick="redirectTo('index.html')">Logout</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cargo Management System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+        function handleAdministration(value) {
+            if (value) {
+                redirectTo(value);
+            }
+
+        function handleReport(value){
+            if(value){
+                redirectTo(value);
+            }
+        }
+        }
+    </script>
+</body>
+</html>

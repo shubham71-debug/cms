@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery UI library -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        header {
+            background-color: #aedee6;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #e29d3c;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .welcome {
+            background-color: #c695de;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(174, 112, 112, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #dfe991;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        button[type="submit"],
+        button[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        button[type="submit"]:hover,
+        button[type="reset"]:hover {
+            background-color: #45a049;
+        }
+
+        
+select#Mode {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    width: 100%; 
+}
+
+select#Mode:hover,
+select#Mode:focus {
+    border-color: #999;
+}
+
+
+select#Mode::-ms-expand {
+    display: none;
+}
+
+select#Mode option {
+    color: initial; 
+}
+
+
+select#Cargo {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    width: 100%; 
+}
+
+select#Cargo:hover,
+select#Cargo:focus {
+    border-color: #999;
+}
+
+
+select#Cargo::-ms-expand {
+    display: none;
+}
+
+select#Cargo option {
+    color: initial; 
+}
+
+    </style>
+    <title>Cargo Management System</title>
+</head>
+<body>
+    <header>
+        <h1>Cargo Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Admin.html">Dashboard</a></li>
+                <li><select id="administrationSelect" onchange="handleAdministration(this.value)">
+                    <option value="" selected disabled>Administration</option>
+                    <option value="Payment.html">Add Payment</option>
+                    <option value="AdminAddCargo.html">Add Cargo</option>
+                    <option value="Tracking.html">Add Tracking</option>
+                </select></li>
+                <li><select id="ReportSelect" onchange="handleReport(this.value)">
+                    <option value="" selected disabled>Report</option>
+                    <option value="CargoReports.html">Cargo Report</option>
+                    <option value="CargoReports.html">Payment Report</option>
+                </select></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Add New Payment</h2>
+            <form id="payment" action="PaymentReport.html" method="post">
+                <label for="Cargo">Select Cargo:</label>
+                <select id="Cargo" name="Cargo" required>
+                    <option value="" selected disabled>Select Cargo</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Airplane">Airplane</option>
+                    <option value="Ship">Ship</option>
+                   </select></br>
+                <label for="Date">Payment Date:</label>
+                <input type="text" id="Date" name="Date" placeholder="Enter payment date" required><br>
+                <label for="Amount">Amount:</label>
+                <input type="number" id="Amount" name="Amount" placeholder="Enter payment amount" required><br>
+                <label for="Mode">Mode of Payment:</label>
+                <select id="Mode" name="Mode" required>
+                    <option value="" selected disabled>Select mode of payment</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <!-- Add more options as needed -->
+                </select><br>
+                
+                <label for="Description">Description:</label>
+                <input type="text" id="Description" name="Description" placeholder="Enter payment description" required><br>
+                <button type="submit">Send Payment</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+    </main>
+    
+<script>
+  $(function() {
+    $("#Date").datepicker({
+      dateFormat: "yy-mm-dd", 
+      showButtonPanel: true,
+      changeMonth: true, 
+      changeYear: true 
+    });
+  });
+
+  document.getElementById("payment").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      alert("Data Stored Successfully");
+
+      window.location.href = "#";
+  });
+</script>
+
+</body>
+</html>

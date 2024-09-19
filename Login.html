@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <header>
+       
+    </header>
+    <div class="wrapper">
+        <form  id="loginForm" action="#" method="POST" onsubmit="return validateForm()">
+            <div class="field header">
+                <h2>Login Form</h2>
+            </div>
+            <div class="field name">
+                <div class="input-area">
+                    <input type="email" name="Email" placeholder="Email" class="form-control" id="loginEmail" required>
+                    <i class="icon fas fa-envelope"></i>
+                </div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" name="Password" placeholder="Password" id="loginPassword" required>
+                    <i class="icon fas fa-lock"></i>
+                </div>
+            </div>
+            <input type="submit" class="btn" value="Login">
+        </form>
+        <script src="index.js"></script>
+        <div class="sign-txt">Not yet a member? <a href="Registration.html">Sign up now</a></div>
+    </div>
+
+    <script>
+       
+
+        function validateForm() {
+            var email = document.querySelector('input[name="Email"]').value;
+            var password = document.querySelector('input[name="Password"]').value;
+
+            // Check if email and password match admin credentials
+            if (email === "admin1234@gmail.com" && password === "1234") {
+                window.location.href = "Admin.html";
+                return false; // Prevent form submission after redirect
+            } else {
+                window.location.href = "user.html";
+                return false; // Prevent form submission after redirect
+            }
+        }
+    </script>
+</body>
+</html>

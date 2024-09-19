@@ -1,0 +1,165 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Default text color */
+}
+
+header {
+    background-color: #333; /* Dark background for header */
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.system-description {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.feature {
+    width: calc(33.33% - 40px); /* Adjust the width and margin as needed */
+    background-color: #fff; /* White background */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.feature h3 {
+    color: #333; /* Dark text color */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* About Us Section */
+.about {
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 50px 20px;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature {
+    width: calc(50% - 40px); /* Adjust the width and margin as needed */
+    background-color: #fff; /* White background */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature img {
+    width: 80px; /* Adjust the size of the images */
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    color: #333; /* Dark text color */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* Contact Us Section */
+.contact-form {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text color */
+    padding: 50px 20px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-form form {
+    max-width: 600px; /* Adjust the maximum width of the form */
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ddd; /* Light gray background on hover */
+}

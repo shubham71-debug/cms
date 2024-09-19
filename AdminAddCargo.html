@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Management System</title>
+    
+    <style>
+       
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Colors */
+:root {
+    --primary-color: #87a19a;
+    --secondary-color: #333;
+    --background-color: #c2e192;
+    --accent-color: #d77622;
+    --text-color: #a48fcf;
+    --link-color: #6a71ea;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--secondary-color);
+    padding: 10px 0;
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: var(--link-color);
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+/* Form */
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #d783b1;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(202, 97, 97, 0.788);
+}
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+h3 {
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #eda113;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+input[type="submit"],
+input[type="reset"] {
+    background-color: var(--primary-color);
+    color: #ebca6e;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+        @keyframes animateBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Cargo Management System
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Admin.html">Home</a></li>
+            <li><a href="#AboutUs.html">About Us</a></li>
+            <li><a href="Admin.html">Dashboard</a></li>
+            <li>
+                <select id="administrationSelect" onchange="handleAdministration(this.value)">
+                    <option value="" selected disabled>Administration</option>
+                    <option value="Payment.html">Add Payment</option>
+                    <option value="AdminAddCargo.html">Add Cargo</option>
+                    <option value="Tracking.html">Add Tracking</option>
+                </select>
+            <li><select id="ReportSelect" onchange="handleReport(this.value)">
+                <option value="" selected disabled>Report</option>
+                <option value="CargoReports.html">Cargo Report</option>
+                <option value="CargoReports.html">Payment Report</option>
+            </select></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="welcome">
+            <h2>Add New Cargo</h2>
+            <form id="cargoForm" method="post">
+                <div>
+                    <h3>Sender Details</h3>
+                    <label for="sname">Sender Name:</label>
+                    <input type="text" id="sname" name="sname" required><br>
+                    <label for="smobile">Sender Mobile:</label>
+                    <input type="tel" id="smobile" name="smobile" pattern="[0-9]{10}" required><br>
+                    <label for="semail">Sender Email:</label>
+                    <input type="email" id="semail" name="semail" required><br>
+                    <label for="saddress">Sender Address:</label>
+                    <input type="text" id="saddress" name="saddress" required><br>
+                </div>
+                <div>
+                    <h3>Receiver Details</h3>
+                    <label for="rname">Receiver Name:</label>
+                    <input type="text" id="rname" name="rname" required><br>
+                    <label for="rmobile">Receiver Mobile:</label>
+                    <input type="tel" id="rmobile" name="rmobile" pattern="[0-9]{10}" required><br>
+                    <label for="remail">Receiver Email:</label>
+                    <input type="email" id="remail" name="remail" required><br>
+                    <label for="raddress">Receiver Address:</label>
+                    <input type="text" id="raddress" name="raddress" required><br>
+                </div>
+                <div>
+                    <h3>Cost and Description Details</h3>
+                    <label for="tcost">Total Cost:</label>
+                    <input type="text" id="tcost" name="tcost" required><br>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                    <!-- <a href=" TrackingReports.html"-->
+                        <button type="submit" onclick="submitForm()">Submit</button>
+                        <button type="button" onclick="resetForm()">Reset</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cargo Management System. All rights reserved.</p>
+    </footer>
+    <script>
+         function redirectTo(url) {
+            window.location.href = url;
+        }
+
+        function handleAdministration(value) {
+            if (value) {
+                redirectTo(value);
+            }
+        }
+        function handleReport(value){
+            if(value){
+                redirectTo(value);
+            }
+        }
+
+        function submitForm(){
+            alert("Data Sotred Successfully");
+            document.getElementById("cargoForm").reset();
+        }
+        function resetForm(){
+            document.getElementById("cargoForm").reset();
+        }
+        
+    </script>
+</body>
+</html>
